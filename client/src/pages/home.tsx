@@ -99,7 +99,11 @@ export default function Home() {
             <WaitlistForm onSuccess={() => setShowSuccessModal(true)} />
             
             <p className="text-white/70 text-sm mt-4" data-testid="text-waitlist-count">
-              <span className="font-semibold">{waitlistData?.count?.toLocaleString() || '0'}</span> people already joined
+              {waitlistData?.count && waitlistData.count > 0 ? (
+                <><span className="font-semibold">{waitlistData.count.toLocaleString()}</span> people already joined</>
+              ) : (
+                <>Be among the first to join the waitlist</>
+              )}
             </p>
           </div>
         </div>
