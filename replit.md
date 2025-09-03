@@ -1,8 +1,8 @@
-# Frenz - Social Discovery App
+# Lobbi - Social Discovery App
 
 ## Overview
 
-Frenz is a map-based social discovery application designed to help users find activities, join lobbies, and meet new people in their city. The project is currently in development with a landing page and waitlist functionality implemented. The application features a modern React frontend with a Node.js/Express backend, using PostgreSQL for data persistence and Drizzle ORM for database operations.
+Lobbi is a map-based social discovery application designed to help users find activities, join lobbies, and meet new people in their city. The project is currently in development with a landing page and waitlist functionality implemented. The application features a modern React frontend with a Node.js/Express backend, using PostgreSQL for data persistence and Drizzle ORM for database operations.
 
 ## User Preferences
 

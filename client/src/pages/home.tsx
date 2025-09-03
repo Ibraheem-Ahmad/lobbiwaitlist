@@ -53,7 +53,7 @@ export default function Home() {
               <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
                 <Sprout className="text-white text-sm" />
               </div>
-              <span className="text-xl font-bold text-primary">Frenz</span>
+              <span className="text-xl font-bold text-primary">Lobbi</span>
             </div>
             <button 
               onClick={scrollToForm}
@@ -118,9 +118,9 @@ export default function Home() {
       <section className="py-20 bg-background" data-testid="features-section">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 slide-up">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4" data-testid="text-features-title">Why Frenz is Different</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4" data-testid="text-features-title">Why Lobbi is Different</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto" data-testid="text-features-subtitle">
-              Unlike typical event apps, Frenz is built for spontaneity and real connection
+              Unlike typical event apps, Lobbi is built for spontaneity and real connection
             </p>
           </div>
 
@@ -247,7 +247,7 @@ export default function Home() {
               data-testid="img-testimonial"
             />
             <blockquote className="text-lg italic text-muted-foreground mb-4" data-testid="text-testimonial-quote">
-              "I moved to a new city and felt lost. Frenz helped me find my community through pickup basketball and coffee meetups. Now I have a solid group of friends!"
+              "I moved to a new city and felt lost. Lobbi helped me find my community through pickup basketball and coffee meetups. Now I have a solid group of friends!"
             </blockquote>
             <div className="flex items-center justify-center">
               <div className="w-12 h-12 bg-gray-300 rounded-full mr-4"></div>
@@ -294,10 +294,10 @@ export default function Home() {
               <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
                 <Sprout className="text-white text-sm" />
               </div>
-              <span className="text-xl font-bold">Frenz</span>
+              <span className="text-xl font-bold">Lobbi</span>
             </div>
             <div className="text-center md:text-right">
-              <p className="text-white/70" data-testid="text-footer-copyright">&copy; 2024 Frenz. All rights reserved.</p>
+              <p className="text-white/70" data-testid="text-footer-copyright">&copy; 2024 Lobbi. All rights reserved.</p>
               <p className="text-white/70 text-sm" data-testid="text-footer-tagline">Building the future of social discovery</p>
             </div>
           </div>
