@@ -86,8 +86,11 @@ export default function Home() {
           </div>
           
           <div className={`fade-in ${animationStarted ? 'animate-in' : ''}`} style={{animationDelay: '0.4s'}}>
-            <p className="text-xl sm:text-2xl text-white/90 mb-8 max-w-2xl mx-auto" data-testid="text-hero-subtitle">
+            <p className="text-xl sm:text-2xl text-white/90 mb-4 max-w-2xl mx-auto" data-testid="text-hero-subtitle">
               The map-based social discovery app that turns spontaneous moments into real connections
+            </p>
+            <p className="text-lg text-white/80 mb-8" data-testid="text-hero-location">
+              Starting in Philadelphia • More cities coming soon
             </p>
           </div>
 
