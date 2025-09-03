@@ -40,12 +40,25 @@ export async function registerRoutes(app: Express): Promise<Server> {
       });
     } catch (error: any) {
       if (error.name === 'ZodError') {
+        const fieldErrors = error.errors.map((err: any) => ({
+          field: err.path.join('.'),
+          message: err.message
+        }));
         return res.status(400).json({ 
-          message: "Invalid input data",
-          errors: error.errors
+          message: "Please check your input and try again",
+          errors: fieldErrors
         });
       }
-      res.status(500).json({ message: "Failed to join waitlist" });
+      
+      // Handle database constraint errors (like duplicate email)
+      if (error.code === '23505') {
+        return res.status(400).json({ 
+          message: "This email is already registered for the waitlist" 
+        });
+      }
+      
+      console.error("Waitlist signup error:", error);
+      res.status(500).json({ message: "Something went wrong. Please try again." });
     }
   });
 

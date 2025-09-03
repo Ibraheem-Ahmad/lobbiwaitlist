@@ -23,6 +23,7 @@ export default function WaitlistForm({ onSuccess }: WaitlistFormProps) {
 
   const form = useForm<FormData>({
     resolver: zodResolver(insertWaitlistSignupSchema),
+    mode: "onChange", // Validate on change for better UX
     defaultValues: {
       name: "",
       email: "",
@@ -124,8 +125,8 @@ export default function WaitlistForm({ onSuccess }: WaitlistFormProps) {
           
           <Button 
             type="submit"
-            disabled={mutation.isPending}
-            className="w-full bg-white hover:bg-white/90 text-primary font-semibold px-8 py-4 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg"
+            disabled={mutation.isPending || !form.formState.isValid}
+            className="w-full bg-white hover:bg-white/90 text-primary font-semibold px-8 py-4 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
             data-testid="button-submit-waitlist"
           >
             {mutation.isPending ? (

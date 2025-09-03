@@ -1,5 +1,6 @@
-import { type User, type InsertUser, type WaitlistSignup, type InsertWaitlistSignup } from "@shared/schema";
-import { randomUUID } from "crypto";
+import { users, waitlistSignups, type User, type InsertUser, type WaitlistSignup, type InsertWaitlistSignup } from "@shared/schema";
+import { db } from "./db";
+import { eq, count } from "drizzle-orm";
 
 export interface IStorage {
   getUser(id: string): Promise<User | undefined>;
@@ -10,52 +11,42 @@ export interface IStorage {
   getWaitlistSignupByEmail(email: string): Promise<WaitlistSignup | undefined>;
 }
 
-export class MemStorage implements IStorage {
-  private users: Map<string, User>;
-  private waitlistSignups: Map<string, WaitlistSignup>;
-
-  constructor() {
-    this.users = new Map();
-    this.waitlistSignups = new Map();
-  }
-
+export class DatabaseStorage implements IStorage {
   async getUser(id: string): Promise<User | undefined> {
-    return this.users.get(id);
+    const [user] = await db.select().from(users).where(eq(users.id, id));
+    return user || undefined;
   }
 
   async getUserByUsername(username: string): Promise<User | undefined> {
-    return Array.from(this.users.values()).find(
-      (user) => user.username === username,
-    );
+    const [user] = await db.select().from(users).where(eq(users.username, username));
+    return user || undefined;
   }
 
   async createUser(insertUser: InsertUser): Promise<User> {
-    const id = randomUUID();
-    const user: User = { ...insertUser, id };
-    this.users.set(id, user);
+    const [user] = await db
+      .insert(users)
+      .values(insertUser)
+      .returning();
     return user;
   }
 
   async createWaitlistSignup(insertSignup: InsertWaitlistSignup): Promise<WaitlistSignup> {
-    const id = randomUUID();
-    const signup: WaitlistSignup = {
-      ...insertSignup,
-      id,
-      createdAt: new Date(),
-    };
-    this.waitlistSignups.set(id, signup);
+    const [signup] = await db
+      .insert(waitlistSignups)
+      .values(insertSignup)
+      .returning();
     return signup;
   }
 
   async getWaitlistCount(): Promise<number> {
-    return this.waitlistSignups.size;
+    const [result] = await db.select({ count: count() }).from(waitlistSignups);
+    return result.count;
   }
 
   async getWaitlistSignupByEmail(email: string): Promise<WaitlistSignup | undefined> {
-    return Array.from(this.waitlistSignups.values()).find(
-      (signup) => signup.email === email,
-    );
+    const [signup] = await db.select().from(waitlistSignups).where(eq(waitlistSignups.email, email));
+    return signup || undefined;
   }
 }
 
-export const storage = new MemStorage();
+export const storage = new DatabaseStorage();
