@@ -2,8 +2,9 @@ import { useState, useEffect } from "react";
 import { ChevronDown, Sprout, MapPin, Users, Filter, Coffee, Palette, Volleyball, Lightbulb, Check } from "lucide-react";
 import WaitlistForm from "@/components/waitlist-form";
 import SuccessModal from "@/components/success-modal";
-import activityMap from '../assets/activity_map.png';
 import activityMapVideo from '../assets/activity_map_loop.mp4';
+import lobbiesVideo from '../assets/join_lobbies_loop.mp4';
+import filterVideo from '../assets/categories_loop.mp4';
 
 export default function Home() {
   const [showSuccessModal, setShowSuccessModal] = useState(false);
@@ -145,11 +146,16 @@ export default function Home() {
                 <Users className="text-primary text-2xl" />
               </div>
               <h3 className="text-2xl font-semibold mb-4" data-testid="text-feature-lobbies-title">Join or Create Lobbies</h3>
-              <img 
-                src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" 
-                alt="Group of people socializing outdoors" 
-                className="rounded-xl mb-4 w-full h-40 object-cover" 
-                data-testid="img-feature-lobbies"
+              <video
+                src={lobbiesVideo}         // import or public path
+                className="rounded-xl mb-4 w-full h-96 object-cover"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                aria-label="Interactive map demo video"
+                data-testid="video-feature-map"
               />
               <p className="text-muted-foreground" data-testid="text-feature-lobbies-description">Join small group meetups or create your own lobby to rally people around activities you love.</p>
             </div>
@@ -160,11 +166,16 @@ export default function Home() {
                 <Filter className="text-primary text-2xl" />
               </div>
               <h3 className="text-2xl font-semibold mb-4" data-testid="text-feature-filter-title">Find Your Vibe</h3>
-              <img 
-                src="https://images.unsplash.com/photo-1502920917128-1aa500764cbd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" 
-                alt="Urban exploration and city discovery" 
-                className="rounded-xl mb-4 w-full h-40 object-cover" 
-                data-testid="img-feature-filter"
+              <video
+                src={filterVideo}         // import or public path
+                className="rounded-xl mb-4 w-full h-96 object-cover"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                aria-label="Interactive map demo video"
+                data-testid="video-feature-map"
               />
               <p className="text-muted-foreground" data-testid="text-feature-filter-description">Filter by categories like Outdoors, Social, Creative, and Interest to discover exactly what you're looking for.</p>
             </div>
