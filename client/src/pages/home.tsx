@@ -258,12 +258,12 @@ export default function Home() {
               data-testid="img-testimonial"
             />
             <blockquote className="text-lg italic text-muted-foreground mb-4" data-testid="text-testimonial-quote">
-              "As a Philly native, I love how Frenz is building community right here in our city. The app helped me discover new neighborhoods and connect with fellow Philadelphians through basketball at the courts and coffee meetups in Center City. It's exactly what our city needed!"
+              "“After college, it felt almost impossible to make new friends. Everyone seemed busy with work or stuck in their own circles. When I found Frenz, it was such a relief. I joined a food hopping lobby just for fun, thinking I’d try a few new spots, but it turned into one of the best nights I’ve had in the city. We went from dumplings to tacos to dessert, and by the end I’d made a group of friends I still keep in touch with. Honestly, it’s exactly what our city needed."
             </blockquote>
             <div className="flex items-center justify-center">
               <div className="w-12 h-12 bg-gray-300 rounded-full mr-4"></div>
               <div className="text-left">
-                <div className="font-semibold" data-testid="text-testimonial-author">Sarah Chen</div>
+                <div className="font-semibold" data-testid="text-testimonial-author">Yassine M.</div>
                 <div className="text-sm text-muted-foreground" data-testid="text-testimonial-role">Beta Tester, Philadelphia</div>
               </div>
             </div>
