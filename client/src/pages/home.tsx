@@ -5,6 +5,7 @@ import SuccessModal from "@/components/success-modal";
 import activityMapVideo from '../assets/activity_map_loop.mp4';
 import lobbiesVideo from '../assets/join_lobbies_loop.mp4';
 import filterVideo from '../assets/categories_loop.mp4';
+import testimonialImage from '../assets/candid.png';
 
 export default function Home() {
   const [showSuccessModal, setShowSuccessModal] = useState(false);
@@ -252,7 +253,7 @@ export default function Home() {
 
           <div className="bg-white p-8 rounded-2xl shadow-lg border border-border slide-up" style={{animationDelay: '0.4s'}} data-testid="testimonial">
             <img 
-              src="https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&h=400" 
+              src={testimonialImage}
               alt="Group of people at social meetup" 
               className="rounded-xl w-full h-64 object-cover mb-6" 
               data-testid="img-testimonial"
