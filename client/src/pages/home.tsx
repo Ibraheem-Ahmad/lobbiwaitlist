@@ -1,4 +1,3 @@
-import { useQuery } from "@tanstack/react-query";
 import { useState, useEffect } from "react";
 import { ChevronDown, Sprout, MapPin, Users, Filter, Coffee, Palette, Volleyball, Lightbulb, Check } from "lucide-react";
 import WaitlistForm from "@/components/waitlist-form";
@@ -7,10 +6,6 @@ import SuccessModal from "@/components/success-modal";
 export default function Home() {
   const [showSuccessModal, setShowSuccessModal] = useState(false);
   const [animationStarted, setAnimationStarted] = useState(false);
-
-  const { data: waitlistData } = useQuery({
-    queryKey: ["/api/waitlist/count"],
-  });
 
   const scrollToForm = () => {
     const formElement = document.getElementById("waitlist-form");
@@ -51,7 +46,8 @@ export default function Home() {
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-2" data-testid="logo">
               <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                <Sprout className="text-white text-sm" />
+                <Sprout className
+                ="text-white text-sm" />
               </div>
               <span className="text-xl font-bold text-primary">Frenz</span>
             </div>
@@ -99,11 +95,7 @@ export default function Home() {
             <WaitlistForm onSuccess={() => setShowSuccessModal(true)} />
             
             <p className="text-white/70 text-sm mt-4" data-testid="text-waitlist-count">
-              {waitlistData?.count && waitlistData.count > 0 ? (
-                <><span className="font-semibold">{waitlistData.count.toLocaleString()}</span> people already joined</>
-              ) : (
-                <>Be among the first to join the waitlist</>
-              )}
+              Be among the first to join the waitlist
             </p>
           </div>
         </div>
@@ -226,7 +218,7 @@ export default function Home() {
 
           <div className="grid sm:grid-cols-3 gap-8 mb-16">
             <div className="slide-up" style={{animationDelay: '0.1s'}} data-testid="stat-waitlist">
-              <div className="text-4xl font-bold text-primary mb-2" data-testid="text-stat-waitlist-count">{waitlistData?.count?.toLocaleString() || '0'}</div>
+              <div className="text-4xl font-bold text-primary mb-2" data-testid="text-stat-waitlist-count">500+</div>
               <p className="text-muted-foreground" data-testid="text-stat-waitlist-label">People on waitlist</p>
             </div>
             <div className="slide-up" style={{animationDelay: '0.2s'}} data-testid="stat-cities">

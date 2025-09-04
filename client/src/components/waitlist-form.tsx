@@ -37,7 +37,6 @@ export default function WaitlistForm({ onSuccess }: WaitlistFormProps) {
       return response.json();
     },
     onSuccess: (data) => {
-      queryClient.invalidateQueries({ queryKey: ["/api/waitlist/count"] });
       form.reset();
       onSuccess();
       toast({
