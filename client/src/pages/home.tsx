@@ -258,7 +258,7 @@ export default function Home() {
               data-testid="img-testimonial"
             />
             <blockquote className="text-lg italic text-muted-foreground mb-4" data-testid="text-testimonial-quote">
-              "“After college, it felt almost impossible to make new friends. Everyone seemed busy with work or stuck in their own circles. When I found Frenz, it was such a relief. I joined a food hopping lobby just for fun, thinking I’d try a few new spots, but it turned into one of the best nights I’ve had in the city. We went from dumplings to tacos to dessert, and by the end I’d made a group of friends I still keep in touch with. Honestly, it’s exactly what our city needed."
+              "After college, it felt almost impossible to make new friends. Everyone seemed busy with work or stuck in their own circles. When I found Frenz, it was such a relief. I joined a food hopping lobby just for fun, thinking I’d try a few new spots, but it turned into one of the best nights I’ve had in the city. We went from dumplings to tacos to dessert, and by the end I’d made a group of friends I still keep in touch with. Honestly, it’s exactly what our city needed."
             </blockquote>
             <div className="flex items-center justify-center">
               <div className="w-12 h-12 bg-gray-300 rounded-full mr-4"></div>
