@@ -1,6 +1,6 @@
 import { drizzle } from "drizzle-orm/neon-http";
 import { neon } from "@neondatabase/serverless";
-import { waitlistSignups } from "../../shared/schema.js";
+import { waitlistSignups } from "../shared/schema.js";
 import { eq, count } from "drizzle-orm";
 
 const sql = neon(process.env.DATABASE_URL);
