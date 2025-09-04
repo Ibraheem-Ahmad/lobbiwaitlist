@@ -264,7 +264,7 @@ export default function Home() {
             <div className="flex items-center justify-center">
               <div className="w-12 h-12 bg-gray-300 rounded-full mr-4"></div>
               <div className="text-left">
-                <div className="font-semibold" data-testid="text-testimonial-author">Yassine M.</div>
+                <div className="font-semibold" data-testid="text-testimonial-author">Yassine M. </div>
                 <div className="text-sm text-muted-foreground" data-testid="text-testimonial-role">Beta Tester, Philadelphia</div>
               </div>
             </div>
