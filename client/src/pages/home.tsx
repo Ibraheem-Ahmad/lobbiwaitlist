@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { ChevronDown, Sprout, MapPin, Users, Filter, Coffee, Palette, Volleyball, Lightbulb, Check } from "lucide-react";
 import WaitlistForm from "@/components/waitlist-form";
 import SuccessModal from "@/components/success-modal";
+import activityMap from '../assets/activity_map.png';
+import activityMapVideo from '../assets/activity_map_loop.mp4';
 
 export default function Home() {
   const [showSuccessModal, setShowSuccessModal] = useState(false);
@@ -123,11 +125,16 @@ export default function Home() {
                 <MapPin className="text-primary text-2xl" />
               </div>
               <h3 className="text-2xl font-semibold mb-4" data-testid="text-feature-map-title">Live Activity Map</h3>
-              <img 
-                src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" 
-                alt="Interactive map showing activity locations" 
-                className="rounded-xl mb-4 w-full h-40 object-cover" 
-                data-testid="img-feature-map"
+              <video
+                src={activityMapVideo}         // import or public path
+                className="rounded-xl mb-4 w-full h-96 object-cover"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                aria-label="Interactive map demo video"
+                data-testid="video-feature-map"
               />
               <p className="text-muted-foreground" data-testid="text-feature-map-description">Browse a live map of activities, events, and hidden gems happening right now in your city.</p>
             </div>
