@@ -231,20 +231,21 @@ export default function Home() {
       <section className="py-20 bg-background" data-testid="social-proof-section">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="slide-up">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-12" data-testid="text-social-proof-title">Join Thousands of Early Adopters</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-6" data-testid="text-social-proof-title">Starting Right Here in Philadelphia</h2>
+            <p className="text-lg text-muted-foreground mb-8">Founded by a Philly native, your feedback is welcome - DM @zaratbuilds on Instagram</p>
           </div>
 
           <div className="grid sm:grid-cols-3 gap-8 mb-16">
             <div className="slide-up" style={{animationDelay: '0.1s'}} data-testid="stat-waitlist">
-              <div className="text-4xl font-bold text-primary mb-2" data-testid="text-stat-waitlist-count">500+</div>
+              <div className="text-4xl font-bold text-primary mb-2" data-testid="text-stat-waitlist-count">50+</div>
               <p className="text-muted-foreground" data-testid="text-stat-waitlist-label">People on waitlist</p>
             </div>
             <div className="slide-up" style={{animationDelay: '0.2s'}} data-testid="stat-cities">
-              <div className="text-4xl font-bold text-primary mb-2" data-testid="text-stat-cities-count">15</div>
-              <p className="text-muted-foreground" data-testid="text-stat-cities-label">Cities ready to launch</p>
+              <div className="text-4xl font-bold text-primary mb-2" data-testid="text-stat-cities-count">1</div>
+              <p className="text-muted-foreground" data-testid="text-stat-cities-label">City ready to launch</p>
             </div>
             <div className="slide-up" style={{animationDelay: '0.3s'}} data-testid="stat-activities">
-              <div className="text-4xl font-bold text-primary mb-2" data-testid="text-stat-activities-count">500+</div>
+              <div className="text-4xl font-bold text-primary mb-2" data-testid="text-stat-activities-count">100+</div>
               <p className="text-muted-foreground" data-testid="text-stat-activities-label">Activities mapped</p>
             </div>
           </div>
@@ -257,7 +258,7 @@ export default function Home() {
               data-testid="img-testimonial"
             />
             <blockquote className="text-lg italic text-muted-foreground mb-4" data-testid="text-testimonial-quote">
-              "I moved to a new city and felt lost. Frenz helped me find my community through pickup basketball and coffee meetups. Now I have a solid group of friends!"
+              "As a Philly native, I love how Frenz is building community right here in our city. The app helped me discover new neighborhoods and connect with fellow Philadelphians through basketball at the courts and coffee meetups in Center City. It's exactly what our city needed!"
             </blockquote>
             <div className="flex items-center justify-center">
               <div className="w-12 h-12 bg-gray-300 rounded-full mr-4"></div>
